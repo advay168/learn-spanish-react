@@ -48,7 +48,14 @@ export default function Add() {
             <Heading>Type</Heading>
             <RadioGroup
               name="type"
-              labels={["Noun", "Verb", "Preposition", "Adjective", "Phrase"]}
+              labels={[
+                "Noun",
+                "Verb",
+                "Conjugation",
+                "Preposition",
+                "Adjective",
+                "Phrase",
+              ]}
             />
           </Partition>
           <Partition>

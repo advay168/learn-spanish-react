@@ -1,6 +1,8 @@
 import os
 
-DB_URI = os.getenv("DATABASE_URL", "postgresql://postgres:postgres@localhost:5432/learn-spanish")
+DB_URI = os.getenv(
+    "DATABASE_URL", "postgresql://postgres:postgres@localhost:5432/learn-spanish"
+)
 if DB_URI.startswith("postgres://"):
     DB_URI = DB_URI.replace("postgres://", "postgresql://", 1)
 

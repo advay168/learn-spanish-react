@@ -1,0 +1,16 @@
+[
+  ["Indicativo", "presente", ["1s", "2s", "3s", "1p", "2p", "3p"]],
+  ["Indicativo", "pretérito imperfecto", ["1s", "2s", "3s", "1p", "2p", "3p"]],
+  [
+    "Indicativo",
+    "pretérito perfecto simple",
+    ["1s", "2s", "3s", "1p", "2p", "3p"]
+  ],
+  ["Indicativo", "futuro", ["1s", "2s", "3s", "1p", "2p", "3p"]],
+  ["Subjuntivo", "presente", ["1s", "2s", "3s", "1p", "2p", "3p"]],
+  ["Imperativo", "Afirmativo", ["2s", "3s", "1p", "2p", "3p"]],
+  ["Imperativo", "non", ["2s no", "3s no", "1p no", "2p no", "3p no"]],
+  ["Condicional", "Condicional", ["1s", "2s", "3s", "1p", "2p", "3p"]],
+  ["Gerundio", "Gerondio", [""]],
+  ["Participo", "Participo", ["1s", "2s", "3s", "1p", "2p", "3p"]]
+]

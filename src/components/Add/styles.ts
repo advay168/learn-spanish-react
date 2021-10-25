@@ -5,7 +5,7 @@ export const OuterWrapper = styled.div`
 
   width: 80%;
   margin: 55px auto;
-  height: 450px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   position: relative;

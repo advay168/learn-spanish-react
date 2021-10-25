@@ -1,13 +1,18 @@
+from typing import Sequence
 from sqlalchemy.orm import Session
 
-from  sqlalchemy.sql.expression import func
+from sqlalchemy.sql.expression import func
 
-import models, schemas
+import models
+import schemas
 
-def get_words(db: Session) -> schemas.Data:
-    return db.query(models.Word).all()
 
-def add_word(db: Session, data: schemas.Data):
+def get_words(db: Session) -> Sequence[schemas.Data]:
+    results = db.query(models.Word).all()
+    return results
+
+
+def add_word(db: Session, data: schemas.Data) -> None:
     word = db.query(models.Word).filter_by(word=data.word).first()
     translation = db.query(models.Word).filter_by(translation=data.translation).first()
     if word or translation:
@@ -18,11 +23,30 @@ def add_word(db: Session, data: schemas.Data):
     db.add(db_word)
     db.commit()
 
+
 def get_random_word(db: Session) -> schemas.TestQuestion:
     answer = db.query(models.Word).order_by(func.random()).first()
-    options = db.query(models.Word).filter_by(type=answer.type).filter(models.Word.id!=answer.id).limit(3).all()
-    return {"answer":answer,"options":options}
+    if not answer:
+        return schemas.TestQuestion()
+    options = (
+        db.query(models.Word)
+        .filter_by(type=answer.type)
+        .filter(models.Word.id != answer.id)
+        .limit(3)
+        .all()
+    )
+    return schemas.TestQuestion(answer=answer, options=options)
 
-def remove_word(db: Session, id: int):
+
+def get_random_verb(db: Session) -> str:
+    answer = (
+        db.query(models.Word).filter_by(type="Verb").order_by(func.random()).first()
+    )
+    if not answer:
+        return ""
+    return answer.word
+
+
+def remove_word(db: Session, id: int) -> None:
     db.query(models.Word).filter_by(id=id).delete()
     db.commit()
