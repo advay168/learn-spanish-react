@@ -13,6 +13,7 @@ URL:
 * Typescript
   * React 17
   * create-react-app
+  * react-router
   * styled-components
 * Database
   * PostgreSQL 13 (hosted on heroku)
