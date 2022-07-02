@@ -13,7 +13,7 @@ export default function Header() {
   return (
     <Wrapper>
       <ImgWrapper>
-        <Img src={Logo} alt="Logo" />
+        <Img src={Logo} width="300" height="150" alt="Logo" />
       </ImgWrapper>
       <NavBar />
     </Wrapper>
