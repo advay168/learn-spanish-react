@@ -14,4 +14,5 @@ export const ImgWrapper = styled.div`
 
 export const Img = styled.img`
   width: 100%;
+  aspect-ratio: 2:1;
 `;
