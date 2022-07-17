@@ -7,13 +7,13 @@ import NavBar from "../NavBar";
 import { Wrapper, ImgWrapper, Img } from "./styles";
 
 // Assets
-import {Logo as LogoComponent} from "../../images/Logo.svg";
+import {ReactComponent  as Logo} from "../../images/Logo.svg";
 
 export default function Header() {
   return (
     <Wrapper>
       <ImgWrapper>
-        <LogoComponent />
+        <Logo />
       </ImgWrapper>
       <NavBar />
     </Wrapper>
